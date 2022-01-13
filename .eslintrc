@@ -1,0 +1,24 @@
+{
+  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "semi": "error",
+    "arrow-spacing":"error",
+    "indent": [ "error", "tab" ],
+    "quotes": [ "error", "double", { "allowTemplateLiterals": true }],
+    "object-curly-spacing": "error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-trailing-spaces": "error",
+    
+  }
+}
