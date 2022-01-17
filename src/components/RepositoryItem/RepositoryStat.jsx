@@ -1,6 +1,6 @@
 import React from "react";
-import Text from "./Text";
-import View from "./View";
+import Text from "../Text";
+import View from "../View";
 
 const RepositoryStat = ({ stat, text }) => {
 	const clampStat = (value) => {

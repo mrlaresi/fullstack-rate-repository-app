@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-native";
+import { Route, Routes } from "react-router-native";
 import AppBar from "./AppBar";
 import RepositoryList from "./RepositoryList";
 import SignIn from "./SignIn";
@@ -9,15 +9,11 @@ const Main = () => {
 	return (
 		<View type="main">
 			<AppBar />
-			<Switch>
-				<Route path="/" exact >
-					<RepositoryList />
-				</Route>
-				<Route>
-					<SignIn path="/signin" />
-				</Route>
-				<Redirect to="/" />
-			</Switch>
+			<Routes>
+				<Route path="/" element={<RepositoryList />} />
+				<Route path="/signin" element={<SignIn />} />
+				<Route path="*" element={<RepositoryList />} />
+			</Routes>
 		</View>
 	);
 };

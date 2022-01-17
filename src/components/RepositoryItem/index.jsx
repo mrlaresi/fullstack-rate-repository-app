@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "./Image";
+import Image from "../Image";
 import RepositoryStat from "./RepositoryStat";
 
-import Text from "./Text";
-import View from "./View";
+import Text from "../Text";
+import View from "../View";
 
 const RepositoryItem = ({ repository }) => {
 	return (
