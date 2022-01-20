@@ -11,7 +11,7 @@ const RepositoryStat = ({ stat, text }) => {
 	};
 
 	return (
-		<View flexParent="column">
+		<View testID="repositoryNumberValue" flexParent="column">
 			<View flex="nogrow" style={{ alignSelf: "center" }}>
 				<Text fontWeight="bold">{clampStat(stat)}</Text>
 			</View>

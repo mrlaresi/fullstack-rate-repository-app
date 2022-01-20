@@ -9,25 +9,40 @@ const styles = StyleSheet.create({
 		backgroundColor: theme.colors.primary,
 	},
 	mainContainer: {
-		flexGrow: 1,
-		flexShrink: 1,
-		backgroundColor: theme.colors.secondary,
+		flex: 1
 	},
 	barContainer: {
 		paddingTop: Constants.statusBarHeight,
-		backgroundColor: theme.colors.detailPrimary,
 		paddingLeft: 20,
 		paddingBottom: 12
 	},
-	repoContainer: {
-		padding: 20,
+	parentContainer: {
+		padding: 15,
+	},
+	separatorContainer: {
+		height: 10,
 	},
 	languageContainer: {
 		marginTop: 5,
 		padding: 5,
-		backgroundColor: theme.colors.detailSecondary,
 		borderRadius: 10,
 		alignSelf: "flex-start"
+	},
+	colorSecondary: {
+		backgroundColor: theme.colors.secondary,
+	},
+	colorDetail: {
+		backgroundColor: theme.colors.detailPrimary,
+	},
+	colorDetailSecondary: {
+		backgroundColor: theme.colors.detailSecondary
+	},
+	borderRound: {
+		height: 50,
+		width: 50,
+		borderRadius: 25,
+		borderWidth: theme.border.borderWidth,
+		borderColor: theme.colors.detailSecondary
 	},
 	flexParentRow: {
 		display: "flex",
@@ -38,23 +53,29 @@ const styles = StyleSheet.create({
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "space-around",
-		alignContent: "space-between"
+		alignContent: "space-between",
 	},
 	flexNoGrowContainer: {
-		flexGrow: 0
+		flex: 0,
 	},
 	flexGrowContainer: {
-		flexGrow: 1
-	}
+		flexGrow: 1,
+		flexShrink: 1
+	},
 });
 
-const View = ({ type, flex, flexParent, style, ...props }) => {
+const View = ({ type, color, border, flexParent, flex, style, ...props }) => {
 	const viewStyle = [
 		styles.defaultContainer,
 		type === "main" && styles.mainContainer,
 		type === "bar" && styles.barContainer,
-		type === "repository" && styles.repoContainer,
+		type === "parent" && styles.parentContainer,
 		type === "language" && styles.languageContainer,
+		type === "separator" && styles.separatorContainer,
+		color === "secondary" && styles.colorSecondary,
+		color === "detail" && styles.colorDetail,
+		color === "detailSecondary" && styles.colorDetailSecondary,
+		border === "round" && styles.borderRound,
 		flexParent === "row" && styles.flexParentRow,
 		flexParent === "column" && styles.flexParentColumn,
 		flex === "nogrow" && styles.flexNoGrowContainer,

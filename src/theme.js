@@ -5,7 +5,12 @@ const theme = {
 		primary: "#202020",
 		secondary: "#404040",
 		detailPrimary: "#188df5",
-		detailSecondary: "#154aa1"
+		detailSecondary: "#154aa1",
+		detailRed: "#a04040"
+	},
+	border: {
+		borderRadius: 5,
+		borderWidth: 2,
 	},
 	fontSizes: {
 		body: 14,
